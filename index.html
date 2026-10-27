@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Ananya Upadhyay — mechatronics engineer working on manufacturing AI, digital transformation and market strategy.">
+<style>[hidden]{display:none!important}img{max-width:100%}body{margin:0}</style>
+<title>Ananya Upadhyay</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: an engineering drawing set — title-block hero, a flagship field study, sheets for work, revisions, bill of materials */
+:root{
+  --paper:#F2F4F6; --sheet:#FFFFFF; --ink:#141A22; --muted:#5A6573; --line:#C9D0D8;
+  --accent:#2340C8; --accent-soft:#E3E8FB; --amber:#B86A00; --amber-soft:#FBEFD9;
+  --f-display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0E1217; --sheet:#151B22; --ink:#E6EAF0; --muted:#94A0AE; --line:#2B3440;
+  --accent:#8EA2FF; --accent-soft:#1D2547; --amber:#F0A63C; --amber-soft:#2E2312; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0E1217; --sheet:#151B22; --ink:#E6EAF0; --muted:#94A0AE; --line:#2B3440;
+  --accent:#8EA2FF; --accent-soft:#1D2547; --amber:#F0A63C; --amber-soft:#2E2312; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font:16px/1.6 var(--f-body);
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:32px 32px;background-attachment:fixed}
+body::after{content:"";position:fixed;inset:0;background:var(--paper);opacity:.86;z-index:-1}
+.wrap{max-width:1080px;margin:0 auto;padding-block:32px 64px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  display:grid;gap:56px}
+h1,h2,h3,h4{text-wrap:balance;margin:0}
+p{margin:0}
+.label{font:500 11px/1.2 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+button{font-family:inherit}
+
+/* Title block */
+.titleblock{background:var(--sheet);border:2px solid var(--ink);display:grid;grid-template-columns:1.6fr 1fr}
+.tb-main{padding:28px 28px 24px;border-right:2px solid var(--ink);display:grid;gap:14px;min-width:0}
+.tb-main h1{font:800 clamp(52px,10vw,104px)/.88 var(--f-display);letter-spacing:-.01em;text-transform:uppercase}
+.tb-main h1 span{color:var(--accent)}
+.thesis{font-size:clamp(17px,2.2vw,20px);max-width:52ch}
+.tb-cells{display:grid;grid-template-columns:1fr 1fr;align-content:start}
+.cell{padding:12px 14px;border-bottom:1px solid var(--ink);border-right:1px solid var(--ink);display:grid;gap:4px;min-width:0}
+.cell:nth-child(2n){border-right:0}
+.cell b{font:500 14px/1.35 var(--f-mono)}
+.cell.wide{grid-column:1/-1;border-right:0}
+.cell.last{border-bottom:0}
+.cta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.btn{font:600 14px/1 var(--f-body);padding:12px 16px;border:2px solid var(--ink);background:var(--ink);color:var(--sheet);cursor:pointer;text-decoration:none;display:inline-block}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn:hover{background:var(--accent);border-color:var(--accent);color:var(--sheet)}
+
+.readouts{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);background:var(--sheet)}
+.readout{padding:18px;border-right:1px solid var(--line);display:grid;gap:2px}
+.readout:last-child{border-right:0}
+.readout strong{font:800 40px/1 var(--f-display);font-variant-numeric:tabular-nums}
+.readout span{font-size:14px;color:var(--muted)}
+
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;border-bottom:2px solid var(--ink);padding-bottom:10px}
+.sec-head h2{font:800 clamp(34px,5vw,48px)/1 var(--f-display);text-transform:uppercase}
+.sec-intro{max-width:62ch;color:var(--muted);margin-top:14px}
+
+/* Flagship study */
+.study{display:grid;gap:18px}
+.chapters{display:flex;flex-wrap:wrap;gap:8px}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);border:2px solid var(--ink);background:var(--sheet)}
+.step{border:0;border-right:1px solid var(--line);background:transparent;color:var(--ink);padding:12px 12px;text-align:left;cursor:pointer;display:grid;gap:4px;min-width:0}
+.step:last-child{border-right:0}
+.step .n{font:500 11px/1 var(--f-mono);color:var(--muted);letter-spacing:.1em}
+.step .t{font:600 15px/1.25 var(--f-body)}
+.step[aria-selected="true"]{background:var(--ink);color:var(--sheet)}
+.step[aria-selected="true"] .n{color:var(--line)}
+.panel{background:var(--sheet);border:1px solid var(--ink);padding:24px;display:grid;grid-template-columns:1fr 1.2fr;gap:28px;align-items:start}
+.panel > div{min-width:0;display:grid;gap:12px}
+.panel h3{font:800 30px/1.05 var(--f-display);text-transform:uppercase}
+.panel ul{margin:0;padding-left:18px;display:grid;gap:6px}
+.note{font:400 12px/1.5 var(--f-mono);color:var(--muted)}
+.chart svg{width:100%;height:auto;display:block}
+.chart text{font-family:var(--f-mono);fill:var(--muted)}
+.chart .val{fill:var(--ink);font-weight:500}
+.need-grid{display:flex;flex-wrap:wrap;gap:8px}
+.need{font:500 13px/1 var(--f-mono);padding:10px 12px;border:1px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.need[aria-pressed="true"]{border-color:var(--amber);background:var(--amber-soft);color:var(--amber)}
+.need-out{border-left:3px solid var(--amber);padding:6px 0 6px 14px;min-height:4.5em}
+.toggle{display:inline-flex;border:2px solid var(--ink);width:max-content}
+.toggle button{font:500 13px/1 var(--f-mono);padding:10px 14px;border:0;background:transparent;color:var(--ink);cursor:pointer}
+.toggle button[aria-pressed="true"]{background:var(--ink);color:var(--sheet)}
+.spec{overflow-x:auto}
+.spec table{min-width:340px}
+.spec td.hl{color:var(--accent);font-weight:600}
+.flow{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:center}
+.flow .col{display:grid;gap:6px}
+.flow .pill{font:500 13px/1.3 var(--f-mono);padding:8px 10px;border:1px solid var(--line);background:var(--paper)}
+.flow .pill.lesson{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+.flow .arrow{font:800 32px/1 var(--f-display);color:var(--muted)}
+.ev{background:var(--sheet);border:1px solid var(--line);padding:24px;display:grid;grid-template-columns:1fr 1.2fr;gap:28px}
+.ev > div{min-width:0;display:grid;gap:12px}
+.ev h3{font:800 30px/1.05 var(--f-display);text-transform:uppercase}
+
+/* Work grid */
+.switch{display:inline-flex;border:2px solid var(--ink)}
+.switch button{font:500 13px/1 var(--f-mono);padding:10px 12px;border:0;background:transparent;color:var(--ink);cursor:pointer}
+.switch button[aria-pressed="true"]{background:var(--ink);color:var(--sheet)}
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:500 13px/1 var(--f-mono);padding:9px 12px;border:1px solid var(--line);background:var(--sheet);color:var(--ink);cursor:pointer}
+.chip[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft);color:var(--accent)}
+.work{display:grid;gap:20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;align-items:start}
+.card{background:var(--sheet);border:1px solid var(--line);display:grid;transition:border-color .2s,opacity .25s}
+.card:hover{border-color:var(--ink)}
+.card.dim{opacity:.28}
+.card.hit{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.card-top{display:flex;justify-content:space-between;gap:10px;padding:14px 16px 0}
+.status{font:500 11px/1 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;padding:5px 7px;border:1px solid currentColor;white-space:nowrap}
+.status.live{color:var(--accent)} .status.build{color:var(--amber)} .status.done{color:var(--muted)}
+.card-body{padding:10px 16px 16px;display:grid;gap:8px;min-width:0}
+.card h3{font:600 19px/1.3 var(--f-body)}
+.card p{color:var(--muted);font-size:15px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.spark svg{width:100%;height:auto;display:block;font-family:var(--f-mono)}
+.spark .note{color:var(--muted);font-size:11px}
+.tag{font:400 12px/1 var(--f-mono);color:var(--muted);border:1px dashed var(--line);padding:5px 6px}
+.card button.open{font:500 13px/1 var(--f-mono);border:0;border-top:1px solid var(--line);background:transparent;color:var(--accent);padding:13px 16px;text-align:left;cursor:pointer}
+.card button.open:hover{background:var(--accent-soft)}
+.detail{border-top:1px solid var(--line);padding:14px 16px;display:grid;gap:12px}
+.detail h4{margin:0 0 2px;font:500 11px/1.2 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.detail p,.detail li{color:var(--ink);font-size:15px}
+.detail ul{margin:0;padding-left:18px}
+.card p.short{display:none}
+.quick .card p.short{display:block}
+.quick .card p.long,.quick .detail,.quick .card button.open{display:none}
+
+/* Tables */
+.revs{overflow-x:auto;background:var(--sheet);border:1px solid var(--ink)}
+table{border-collapse:collapse;width:100%}
+.revs table{min-width:620px}
+th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top;font-variant-numeric:tabular-nums}
+th{font:500 11px/1.2 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);background:var(--paper)}
+td.rev{font:800 28px/1 var(--f-display);color:var(--accent);width:64px}
+td.when{font:400 13px/1.5 var(--f-mono);white-space:nowrap;color:var(--muted)}
+td b{display:block;font-weight:600}
+tr:last-child td{border-bottom:0}
+
+/* BOM */
+.bom-wrap{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+.bom{display:grid;background:var(--sheet);border:1px solid var(--ink)}
+.bom-row{display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;padding:11px 14px;border:0;border-bottom:1px solid var(--line);background:transparent;color:var(--ink);text-align:left;font:15px/1.3 var(--f-body);cursor:pointer;width:100%}
+.bom-row:last-child{border-bottom:0}
+.bom-row .no,.bom-row .qty{font:500 12px/1 var(--f-mono);color:var(--muted);font-variant-numeric:tabular-nums}
+.bom-row[aria-pressed="true"],.bom-row:hover{background:var(--accent-soft);color:var(--accent)}
+.bom-note{display:grid;gap:12px;min-width:0}
+#bomResult{font:500 14px/1.6 var(--f-mono);color:var(--accent);min-height:3em}
+
+.honours{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.honour{background:var(--sheet);border:1px solid var(--line);padding:18px;display:grid;gap:6px;align-content:start}
+.honour strong{font:800 26px/1.05 var(--f-display);text-transform:uppercase}
+
+.beyond{display:grid;grid-template-columns:1.2fr 1fr;gap:0;border:2px solid var(--ink);background:var(--sheet)}
+.beyond > div{padding:24px;display:grid;gap:12px;align-content:start;min-width:0}
+.beyond > div + div{border-left:2px solid var(--ink)}
+.beyond h3{font:800 34px/1 var(--f-display);text-transform:uppercase}
+.reel{aspect-ratio:9/16;max-width:200px;width:100%;justify-self:center;border:1px solid var(--line);position:relative;overflow:hidden;background:var(--ink)}
+.reel canvas{width:100%;height:100%;display:block}
+.reel span{position:absolute;left:10px;bottom:10px;font:500 11px/1.2 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:#F6F1E7}
+
+.contact{background:var(--ink);color:var(--sheet);padding:32px 28px;display:grid;gap:16px}
+.contact h2{font:800 clamp(36px,6vw,60px)/.95 var(--f-display);text-transform:uppercase}
+.contact .label{color:var(--line)}
+.copyline{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.copyline code{font:500 17px/1.3 var(--f-mono);user-select:all;padding:10px 12px;border:1px dashed var(--muted);overflow-wrap:anywhere}
+.contact .btn{background:var(--sheet);color:var(--ink);border-color:var(--sheet)}
+.contact .btn:hover{background:var(--accent);border-color:var(--accent);color:var(--sheet)}
+.contact .links{display:flex;flex-wrap:wrap;gap:18px}
+.contact .links a{color:var(--sheet)}
+#copied{font:400 13px var(--f-mono);color:var(--line)}
+footer{font:400 12px/1.5 var(--f-mono);color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+@media (max-width:820px){
+  .titleblock,.panel,.ev,.beyond,.bom-wrap,.honours{grid-template-columns:1fr}
+  .tb-main{border-right:0;border-bottom:2px solid var(--ink)}
+  .beyond > div + div{border-left:0;border-top:2px solid var(--ink)}
+  .readouts{grid-template-columns:1fr 1fr}
+  .readout:nth-child(2){border-right:0}
+  .readout:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .steps{grid-template-columns:1fr 1fr}
+  .step{border-bottom:1px solid var(--line)}
+  .flow{grid-template-columns:1fr}
+  .flow .arrow{transform:rotate(90deg);justify-self:center}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="titleblock" aria-label="Introduction">
+    <div class="tb-main">
+      <span class="label">Mechatronics engineer · Manufacturing · AI</span>
+      <h1>Ananya<br><span>Upadhyay</span></h1>
+      <p class="thesis">I turn shop-floor and market problems into systems: AI that inspects and protects the line, ERP that people actually use, and strategy built from the data up.</p>
+      <div class="cta-row">
+        <a class="btn" href="#study">See the field study</a>
+        <a class="btn ghost" href="#work">All work</a>
+        <a class="btn ghost" href="#contact">Get in touch</a>
+      </div>
+    </div>
+    <div class="tb-cells">
+      <div class="cell"><span class="label">Role</span><b>Assistant Manager</b></div>
+      <div class="cell"><span class="label">Company</span><b>Hero MotoCorp</b></div>
+      <div class="cell"><span class="label">Rev</span><b>C · since Jul 2026</b></div>
+      <div class="cell"><span class="label">Team</span><b>12 people</b></div>
+      <div class="cell wide"><span class="label">Degree</span><b>B.Tech, Mechatronics Engineering · 2025</b></div>
+      <div class="cell wide"><span class="label">Working on now</span><b>AI vision inspection for engine &amp; frame assembly</b></div>
+      <div class="cell wide last"><span class="label">Next</span><b>General management · MBA abroad</b></div>
+    </div>
+  </header>
+
+  <section class="readouts" aria-label="At a glance">
+    <div class="readout"><strong>4</strong><span>plant-wide programmes led</span></div>
+    <div class="readout"><strong>12</strong><span>people managed</span></div>
+    <div class="readout"><strong>3</strong><span>company sites worked across</span></div>
+    <div class="readout"><strong>14</strong><span>months from graduation to manager</span></div>
+  </section>
+
+  <!-- FLAGSHIP -->
+  <section class="study" id="study">
+    <div class="sec-head">
+      <div><span class="label">Sheet 01 · Flagship case study</span><h2>Africa: from export data to the workshop floor</h2></div>
+    </div>
+    <p class="sec-intro">Two strategy stints on the African two-wheeler market. I sized the market, studied the riders, took apart the competitors' products and brought back what I learned from the field. Step through the investigation below.</p>
+
+    <div class="steps" role="tablist" aria-label="Investigation steps" id="steps"></div>
+    <div class="panel" role="tabpanel" id="panel" aria-live="polite"></div>
+
+    <div class="ev">
+      <div>
+        <span class="label">Earlier stint · Sep – Nov 2025</span>
+        <h3>EV market entry: learning from global challengers</h3>
+        <p>Before the petrol study, I asked what electric two-wheeler challengers around the world do differently. I benchmarked six of them on eight parameters, including product, pricing, channels, financing and charging. That gave four lessons, which shaped an entry framework for Africa.</p>
+        <p class="note">Competitors named are public companies. The framework itself stays internal.</p>
+      </div>
+      <div class="flow" aria-label="Benchmark to lessons">
+        <div class="col">
+          <span class="label">6 players benchmarked</span>
+          <span class="pill">Stark Future</span><span class="pill">Vmoto</span><span class="pill">Silence</span>
+          <span class="pill">NIU</span><span class="pill">Horwin</span><span class="pill">Yadea</span>
+        </div>
+        <div class="arrow" aria-hidden="true">→</div>
+        <div class="col">
+          <span class="label">4 lessons</span>
+          <span class="pill lesson">Performance creates aspiration</span>
+          <span class="pill lesson">Remove the rider's daily friction</span>
+          <span class="pill lesson">Build a B2B fleet stronghold</span>
+          <span class="pill lesson">Use scale as a weapon</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section class="work" id="work">
+    <div class="sec-head">
+      <div><span class="label">Sheet 02</span><h2>Selected work</h2></div>
+      <div class="switch" role="group" aria-label="Detail level">
+        <button id="mDeep" aria-pressed="true">Full case studies</button>
+        <button id="mQuick" aria-pressed="false">30-second view</button>
+      </div>
+    </div>
+    <div class="filters" role="group" aria-label="Filter projects" id="filters"></div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section id="career">
+    <div class="sec-head"><div><span class="label">Sheet 03 · Revision history</span><h2>Career</h2></div></div>
+    <div class="revs" style="margin-top:20px">
+      <table>
+        <thead><tr><th>Rev</th><th>Date</th><th>Change</th><th>Outcome</th></tr></thead>
+        <tbody>
+          <tr><td class="rev">C</td><td class="when">Jul 2026 →</td><td><b>Assistant Manager, Hero MotoCorp</b>Manufacturing plant</td><td>Runs a department with a team of 12. Leads plant-wide AI and SAP programmes.</td></tr>
+          <tr><td class="rev">B</td><td class="when">Feb 2026</td><td><b>Graduate Engineer Trainee</b>Manufacturing plant</td><td>Built automations and AI proposals. Named Best GET of the batch.</td></tr>
+          <tr><td class="rev">A.2</td><td class="when">Late 2025</td><td><b>Market quality strategy stint</b>Gurgaon</td><td>Diagnosed what wins in the African commuter-motorcycle market and built a segmented framework.</td></tr>
+          <tr><td class="rev">A.1</td><td class="when">Sep – Nov 2025</td><td><b>Strategy stint, EV business</b>Gurgaon</td><td>Benchmarked six global EV challengers and sized the African opportunity.</td></tr>
+          <tr><td class="rev">0</td><td class="when">May 2025</td><td><b>B.Tech, Mechatronics Engineering</b></td><td>Winner, company-wide Mechatronics Championship.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="sec-head"><div><span class="label">Sheet 04 · Bill of materials</span><h2>What I bring</h2></div></div>
+    <div class="bom-wrap" style="margin-top:20px">
+      <div class="bom" id="bom" role="group" aria-label="Skills"></div>
+      <div class="bom-note">
+        <span class="label">How to read this</span>
+        <p>Each line is a skill. Tap one and the projects that used it light up in Selected work. The quantity column counts those projects.</p>
+        <div id="bomResult" aria-live="polite">Pick a skill to trace it.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div><span class="label">Sheet 05</span><h2>Recognition</h2></div></div>
+    <div class="honours" style="margin-top:20px">
+      <div class="honour"><span class="label">Award</span><strong>Best GET</strong><span>Top graduate engineer trainee of the batch.</span></div>
+      <div class="honour"><span class="label">Competition</span><strong>Mechatronics Champion</strong><span>Winner of the company-wide Mechatronics Championship.</span></div>
+      <div class="honour"><span class="label">Promotion</span><strong>Manager in 14 months</strong><span>From graduation to Assistant Manager in just over a year.</span></div>
+    </div>
+  </section>
+
+  <section id="beyond">
+    <div class="sec-head"><div><span class="label">Sheet 06 · Outside work</span><h2>I also make films with AI</h2></div></div>
+    <div class="beyond" style="margin-top:20px">
+      <div>
+        <span class="label">Instagram · Generative video</span>
+        <h3>@the_inkotink</h3>
+        <p>Indian folklore and forgotten goddess stories, retold as short films made entirely with generative AI. Each series tries a different animation style, from paper-cutout puppets to painted myth. I also post short explainers on new AI models and news.</p>
+        <p class="note">I write the scripts and direct every reel, then generate the visuals and voice.</p>
+        <div class="cta-row"><a class="btn" id="igLink" href="https://www.instagram.com/the_inkotink" target="_blank" rel="noopener">Watch on Instagram</a></div>
+      </div>
+      <div style="align-content:center">
+        <div class="reel" aria-hidden="true"><canvas id="reel" width="180" height="320"></canvas><span>Now playing · folklore</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <span class="label">Sheet 07</span>
+    <h2>Let's build something that runs itself.</h2>
+    <p style="max-width:56ch">Open to conversations on manufacturing AI, digital transformation and market strategy.</p>
+    <div class="copyline">
+      <code id="email">ananyau7@gmail.com</code>
+      <button class="btn" id="copyBtn">Copy email</button>
+      <span id="copied" aria-live="polite"></span>
+    </div>
+    <div class="links">
+      <a href="https://www.linkedin.com/in/ananyaupadhyay2401" target="_blank" rel="noopener">LinkedIn →</a>
+      <a href="https://www.instagram.com/the_inkotink" target="_blank" rel="noopener" id="igLink2">Instagram →</a>
+    </div>
+  </section>
+
+  <footer><span>Drawn by A. Upadhyay · Rev C</span><span>Employer work is described in general terms, in line with confidentiality policy. Competitor and market data come from public sources.</span></footer>
+</div>
+
+<script>
+/* ---------- Flagship study ---------- */
+const EXPORTS=[["FY22",2109],["FY23",1421],["FY24",1234],["FY25",1323]];
+function chartSVG(){
+  const W=420,H=240,pl=44,pb=28,pt=24,max=2500,bw=56,gap=(W-pl-20-bw*4)/3;
+  const y=v=>pt+(H-pt-pb)*(1-v/max);
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Indian two-wheeler exports to Africa, thousands of units: FY22 2,109; FY23 1,421; FY24 1,234; FY25 1,323">`;
+  [0,500,1000,1500,2000,2500].forEach(t=>{s+=`<line x1="${pl}" x2="${W-10}" y1="${y(t)}" y2="${y(t)}" stroke="var(--line)" stroke-width="1"/><text x="${pl-6}" y="${y(t)+4}" font-size="10" text-anchor="end">${t?t/1000+"M":"0"}</text>`;});
+  EXPORTS.forEach(([l,v],i)=>{const x=pl+10+i*(bw+gap);
+    s+=`<rect x="${x}" y="${y(v)}" width="${bw}" height="${y(0)-y(v)}" fill="${i===3?'var(--accent)':'var(--muted)'}" opacity="${i===3?1:.55}"/>`;
+    s+=`<text class="val" x="${x+bw/2}" y="${y(v)-6}" font-size="11" text-anchor="middle">${v.toLocaleString()}K</text>`;
+    s+=`<text x="${x+bw/2}" y="${H-8}" font-size="11" text-anchor="middle">${l}</text>`;});
+  return s+"</svg>";
+}
+const NEEDS={
+  "Load capacity":"A moto-taxi often carries two or three passengers or heavy cargo. The frame and rear suspension decide whether the bike survives the year.",
+  "Ruggedness":"Unpaved roads, potholes and floods. Ground clearance, sealed parts and a simple, sturdy engine matter more than peak power.",
+  "Spares everywhere":"A rider can't wait for a dealer. The winning brands sell spark plugs and chains in village shops, like fast-moving consumer goods.",
+  "Mechanic trust":"Roadside mechanics recommend the bikes they know how to fix. If they haven't been trained on a brand, they steer buyers away.",
+  "Resale value":"For a daily earner the bike is an asset. A model that resells instantly is a lower-risk purchase."
+};
+const COMP={
+  bajaj:{name:"Bajaj Boxer",pts:[
+    "Built for moto-taxi use from the start, with high torque, a long seat for two or three riders and a rugged chassis.",
+    "ExhausTEC, a small expansion chamber in the exhaust, lifts low-speed torque without hurting fuel economy.",
+    "Spring-in-spring rear suspension stays comfortable for one rider and doesn't bottom out with three.",
+    "Local assembly from knock-down kits through a partner in Tanzania (about 6,000 bikes a month) avoids import duty.",
+    "Has trained over 10,000 local mechanics, who then recommend the brand."]},
+  tvs:{name:"TVS HLX",pts:[
+    "Marketed on total cost of ownership. The range has passed 3.5 million units.",
+    "Integrated starter generator: one coil charges the battery and starts the engine, with no separate starter motor.",
+    "Internal oil cooling on the HLX 150X sprays oil inside the head, so there is no exposed radiator to damage.",
+    "Rider features first: USB charging, tubeless tyres, anti-theft locks.",
+    "Uses vision AI and IoT checks when packing knock-down kits, so a missing part never stops an overseas assembly line."]}
+};
+const SPEC=[["Max power","8.1 kW","7.35 kW"],["Max torque","10.8 Nm","10.49 Nm"],["Gearbox","4-speed","5-speed"],["Ground clearance","180 mm","184 mm"],["Rear sprocket","45T · 8 mm","42T · 8.5 mm"]];
+
+const STEPS=[
+ {t:"Size the market",render:()=>`<div><span class="label">Step 1 · Market</span><h3>A large market that shrank and is coming back</h3>
+   <p>Indian two-wheeler exports to Africa fell about 41% from FY22 to FY24, then started to recover. I mapped volume by country to find where demand actually sits.</p>
+   <ul><li>Nigeria is the largest single market by far.</li><li>Guinea, DR Congo, Uganda, Tanzania and Kenya follow.</li><li>Asia and Latin America form a much smaller second tier.</li></ul></div>
+   <div class="chart">${chartSVG()}<p class="note">Indian two-wheeler exports to Africa, thousands of units. Source: public industry export data.</p></div>`},
+ {t:"Understand the rider",render:()=>`<div><span class="label">Step 2 · Customer</span><h3>The buyer is a business owner</h3>
+   <p>Most buyers are moto-taxi riders and daily-wage workers. The bike is how they earn, so they judge it the way a fleet manager would. Tap a need to see why it matters.</p></div>
+   <div><div class="need-grid" id="needs">${Object.keys(NEEDS).map((k,i)=>`<button class="need" aria-pressed="${i===0}">${k}</button>`).join("")}</div>
+   <div class="need-out" id="needOut">${NEEDS["Load capacity"]}</div></div>`},
+ {t:"Tear down competitors",render:()=>`<div><span class="label">Step 3 · Competition</span><h3>How the market leaders win</h3>
+   <div class="toggle" role="group" aria-label="Competitor"><button data-c="bajaj" aria-pressed="true">Bajaj</button><button data-c="tvs" aria-pressed="false">TVS</button></div>
+   <ul id="compList">${COMP.bajaj.pts.map(p=>`<li>${p}</li>`).join("")}</ul></div>
+   <div><span class="label">Published specs · 125cc class</span>
+   <div class="spec"><table><thead><tr><th>Spec</th><th>TVS HLX 125</th><th>Bajaj Boxer 125</th></tr></thead><tbody>
+   ${SPEC.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td></tr>`).join("")}</tbody></table></div>
+   <p class="note">I compared 14 variants across the commuter segment, part by part, down to sprocket thickness and chain-adjustment travel.</p></div>`},
+ {t:"Go to the field",render:()=>`<div><span class="label">Step 4 · Field evidence</span><h3>What riders do to their bikes</h3>
+   <p>Spec sheets don't show how bikes are really used. So I gathered technicians' accounts and studied the changes owners make themselves.</p></div>
+   <div><ul><li><b>Welded reinforcement:</b> owners add steel bars along the frame so it can carry four people or heavy cargo.</li>
+   <li><b>Wrapped shock absorbers:</b> riders cover the shocks in rubber or cloth to keep out dust and mud, especially in mining regions.</li>
+   <li><b>Reinforced mounts:</b> extra plates on the suspension mounts stop bolts shearing off on impact.</li></ul>
+   <p class="note">Each change points to something the market needs, which became a design requirement.</p></div>`},
+ {t:"Build the framework",render:()=>`<div><span class="label">Step 5 · Recommendation</span><h3>One platform, segmented by region</h3>
+   <p>I found that the continent splits into regions with different priorities. I turned the evidence into a framework that matches product requirements to each region, and presented the diagnosis and framework to the business.</p></div>
+   <div><ul><li>Market sizing and country prioritisation</li><li>Customer needs ranked from field evidence</li><li>Competitor product and go-to-market teardown</li><li>A segmented entry framework with product requirements per region</li></ul>
+   <p class="note">The recommendations themselves are internal and not shown here.</p></div>`}
+];
+const stepsEl=document.getElementById("steps"),panel=document.getElementById("panel");
+STEPS.forEach((s,i)=>{const b=document.createElement("button");b.className="step";b.setAttribute("role","tab");
+  b.innerHTML=`<span class="n">0${i+1}</span><span class="t">${s.t}</span>`;b.onclick=()=>show(i);stepsEl.appendChild(b);});
+function show(i){
+  [...stepsEl.children].forEach((b,j)=>b.setAttribute("aria-selected",i===j));
+  panel.innerHTML=STEPS[i].render();
+  const needs=document.getElementById("needs");
+  if(needs) needs.querySelectorAll(".need").forEach(b=>b.onclick=()=>{needs.querySelectorAll(".need").forEach(x=>x.setAttribute("aria-pressed",x===b));document.getElementById("needOut").textContent=NEEDS[b.textContent];});
+  panel.querySelectorAll(".toggle button").forEach(b=>b.onclick=()=>{panel.querySelectorAll(".toggle button").forEach(x=>x.setAttribute("aria-pressed",x===b));document.getElementById("compList").innerHTML=COMP[b.dataset.c].pts.map(p=>`<li>${p}</li>`).join("");});
+}
+show(0);
+
+/* ---------- Work ---------- */
+const P=[
+ {id:"vision",t:"AI vision inspection for engine & frame assembly",cat:"ai",s:"build",S:"In progress",
+  short:"One AI inspection point that checks every engine and frame before it moves on.",
+  long:"Leading a single-station AI vision system that inspects both engine assembly and frame assembly.",
+  prob:"Critical checks were spread across several manual checkpoints, with gaps between them.",
+  did:["Leading the programme across both assembly lines","Defining what the system must detect and where it sits on the line","Working with the AI vision partner on rollout"],
+  res:"One consistent inspection point in place of scattered manual checks.",
+  skills:["Computer vision","Programme leadership","Stakeholder alignment"],tags:["Computer vision","Assembly"]},
+ {id:"safety",t:"AI video surveillance for plant safety",cat:"ai",s:"live",S:"Plant-wide",
+  short:"Cameras plus AI that flag unsafe acts in real time, across the whole plant.",
+  long:"Led a plant-wide AI video system that spots unsafe acts and alerts the right department.",
+  prob:"Safety violations were found after the fact, by chance or during audits.",
+  did:["Got every department head to agree camera positions","Ran the rollout in phases: cabling, racks, cameras, then a central control room","Mapped detection zones and set up automatic alerts","Ran accuracy tests to cut false alarms"],
+  res:"Live safety monitoring across the plant, with alerts routed by department.",
+  skills:["Computer vision","Programme leadership","Stakeholder alignment"],tags:["AI","Safety","Rollout"]},
+ {id:"s4",t:"SAP S/4HANA plant-wide deployment",cat:"digital",s:"live",S:"Plant-wide",
+  short:"Moving an entire manufacturing plant onto a new ERP, department by department.",
+  long:"Leading the deployment of SAP S/4HANA across the plant.",
+  prob:"A new ERP only pays off when every department uses it properly from the first day.",
+  did:["Coordinating deployment across departments","Aligning process owners on how their work moves into the new system","Supporting users through go-live and stabilisation"],
+  res:"One system of record for the plant's operations.",
+  skills:["SAP / ERP","Programme leadership","Change management"],tags:["SAP S/4HANA","ERP"]},
+ {id:"joule",t:"SAP Joule GenAI copilot adoption",cat:"digital",s:"live",S:"Leading",
+  short:"Getting people to use SAP's built-in AI copilot in their everyday work.",
+  long:"Leading the adoption of SAP Joule, SAP's generative AI copilot, at the plant.",
+  prob:"GenAI tools only add value when people find real tasks for them.",
+  did:["Finding everyday tasks where the copilot saves time","Running awareness and hands-on adoption with teams","Tracking where it helps and where it doesn't"],
+  res:"Generative AI built into routine ERP work instead of sitting unused.",
+  skills:["SAP / ERP","Generative AI","Change management"],tags:["SAP Joule","GenAI"]},
+ {id:"carbide",t:"Carbide commodities: price trend and FY28 outlook",cat:"strat",s:"done",S:"Oct 2026",spark:true,
+  short:"Why carbide inputs rose about 7x and fell back, and what that means for FY28 buying.",
+  long:"A price-trend study of tungsten, cobalt, molybdenum, steel, copper and the rupee, from FY26 to an FY28 outlook, built on public market data.",
+  prob:"China's tungsten price rose about 7x between early 2025 and March 2026, then fell about 69%. Buyers needed to know whether to lock in prices, wait, or change how contracts are priced.",
+  did:["Traced the chain from tungsten ore to finished carbide tool across nine inputs, using public benchmarks such as SMM, LME, Platts and FRED","Showed the cause was policy, not demand: China's export controls and the DR Congo's cobalt export ban, both from February 2025","Built base, bull and bear scenarios for FY28, each with a likelihood and price bands","Turned the findings into buying moves: index-linked contracts, buying forward near the price floor, using less carbide, scrap buy-back and budgeting for a weaker rupee"],
+  res:"A planning view for FY28: tungsten settles at 2–3x its pre-2025 level, and tool prices follow the metal down only slowly.",
+  skills:["Market strategy","Data analysis","Procurement","Scenario planning"],tags:["Commodities","Procurement","Forecasting"]},
+ {id:"africa",t:"Africa commuter-motorcycle market diagnosis",cat:"strat",s:"done",S:"Delivered",jump:"study",
+  short:"Market sizing, rider research, competitor teardowns and field evidence across African markets.",
+  long:"A full diagnosis of what wins in the African commuter-motorcycle market. See the interactive flagship study above.",
+  prob:"",did:[],res:"",
+  skills:["Market strategy","Competitive benchmarking","Field research","Data analysis","Pitching"],tags:["Strategy","Africa"]},
+ {id:"ev",t:"EV market entry benchmarking",cat:"strat",s:"done",S:"Delivered",jump:"study",
+  short:"Six global EV challengers benchmarked on eight parameters, distilled into four lessons.",
+  long:"Benchmarked global electric two-wheeler challengers to shape an entry approach for Africa.",
+  prob:"",did:[],res:"",
+  skills:["Market strategy","Competitive benchmarking","Pitching"],tags:["Strategy","EV"]},
+ {id:"vendor",t:"Vendor follow-up automation",cat:"auto",s:"live",S:"Multi-site",
+  short:"Chases vendors for quotes and deliveries automatically, so nobody has to.",
+  long:"A Google Sheets and Apps Script tool that tracks quotes and purchase-order deliveries and sends follow-ups by itself.",
+  prob:"Quote and delivery follow-ups depended on memory and were chased by hand.",
+  did:["Automatic reminders to vendors, plus a daily overdue digest for the team","One-click Approve, Urgent and Hold links in email","Default timing rules, with a manual override for any item","Wrote an SOP so other sites can set it up themselves"],
+  res:"Rolling out across sites, with my own team as the first users.",
+  skills:["Apps Script","Process design","Procurement"],tags:["Automation","Google Sheets"]},
+ {id:"scm",t:"Supplier schedule adherence automation",cat:"auto",s:"live",S:"Live",
+  short:"Checks every day whether suppliers are delivering on schedule.",
+  long:"Automated daily tracking of supplier schedule adherence for the supply chain team.",
+  prob:"Adherence reports were compiled by hand, so slips showed up late.",
+  did:["Automated the daily comparison of schedule and delivery","Flagged slipping suppliers early, with an approval step before mails go out"],
+  res:"Daily visibility of supplier performance without manual compiling.",
+  skills:["Apps Script","Process design","Data analysis"],tags:["Supply chain","Automation"]},
+ {id:"p2p",t:"SAP purchasing analytics engine",cat:"digital",s:"done",S:"Module 1 shipped",
+  short:"Paste in standard SAP exports and get vendor scorecards and savings out. No macros.",
+  long:"A formula-only Excel engine that turns standard SAP purchasing extracts into decision-ready analysis for any automotive maker.",
+  prob:"SAP holds the purchasing data, but turning it into decisions took manual work every time.",
+  did:["19 tabs and about 75,000 formulas, with no macros","Views for cycle time, price variance, spend, open-order ageing and savings","Compares planned and actual lead times and suggests corrections","Roadmap for four more modules: planning, inventory, cost and maintenance"],
+  res:"A reusable engine, built on standard SAP tables and demo data, that any SAP-based plant can drop its data into.",
+  skills:["SAP / ERP","Excel modelling","Procurement","Data analysis"],tags:["Excel","SAP","Analytics"]}
+];
+function sparkSVG(){
+  const pts=[["Jan 25",210],["Dec 25",500],["Feb 26",1000],["Mar 26",1520],["Oct 26",450]];
+  const W=280,H=120,pl=8,pr=8,pt=18,pb=20,max=1600;
+  const x=i=>pl+i*(W-pl-pr)/(pts.length-1),y=v=>pt+(H-pt-pb)*(1-v/max);
+  const line=pts.map((p,i)=>`${i?"L":"M"}${x(i)},${y(p[1])}`).join("");
+  const area=line+`L${x(pts.length-1)},${y(0)}L${x(0)},${y(0)}Z`;
+  let s=`<div class="spark"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="China tungsten APT price, thousand yuan per tonne: about 210 in January 2025, 500 in December 2025, 1,000 in February 2026, a peak of 1,520 in March 2026, and about 450 in October 2026">`;
+  s+=`<line x1="${pl}" x2="${W-pr}" y1="${y(0)}" y2="${y(0)}" stroke="var(--line)"/>`;
+  s+=`<path d="${area}" fill="var(--accent-soft)"/><path d="${line}" fill="none" stroke="var(--accent)" stroke-width="2"/>`;
+  pts.forEach((p,i)=>{const pk=i===3,last=i===pts.length-1;
+    s+=`<circle cx="${x(i)}" cy="${y(p[1])}" r="${pk||last?3.5:2.5}" fill="${pk?'var(--accent)':'var(--sheet)'}" stroke="var(--accent)" stroke-width="1.5"/>`;
+    s+=`<text x="${x(i)}" y="${H-6}" font-size="9" text-anchor="${i===0?'start':last?'end':'middle'}" fill="var(--muted)">${p[0]}</text>`;
+    if(pk||i===0||last) s+=`<text x="${x(i)}" y="${y(p[1])-7}" font-size="10" font-weight="500" text-anchor="${i===0?'start':last?'end':'middle'}" fill="var(--ink)">${p[1].toLocaleString()}</text>`;});
+  return s+`</svg><p class="note">China tungsten APT, thousand yuan per tonne. Public SMM and Ganzhou data.</p></div>`;
+}
+const CATS={all:"All work",ai:"AI & vision",digital:"Digital & SAP",strat:"Strategy",auto:"Automation"};
+let cat="all",skill=null;
+const grid=document.getElementById("grid"),fil=document.getElementById("filters");
+Object.entries(CATS).forEach(([k,v])=>{const b=document.createElement("button");b.className="chip";b.textContent=v;b.dataset.k=k;b.onclick=()=>{cat=k;skill=null;render();};fil.appendChild(b);});
+
+function card(p){
+  const el=document.createElement("article");el.className="card";el.id="p-"+p.id;
+  const det=p.jump?"":`<button class="open" aria-expanded="false">Open case study +</button>
+   <div class="detail" hidden><div><h4>Problem</h4><p>${p.prob}</p></div>
+   <div><h4>What I did</h4><ul>${p.did.map(d=>`<li>${d}</li>`).join("")}</ul></div>
+   <div><h4>Result</h4><p>${p.res}</p></div></div>`;
+  el.innerHTML=`<div class="card-top"><span class="label">${CATS[p.cat]}</span><span class="status ${p.s}">${p.S}</span></div>
+   <div class="card-body"><h3>${p.t}</h3><p class="short">${p.short}</p><p class="long">${p.long}</p>${p.spark?sparkSVG():""}
+   <div class="tags">${p.tags.map(t=>`<span class="tag">${t}</span>`).join("")}</div></div>${det}
+   ${p.jump?`<button class="open jump">Go to the interactive study ↑</button>`:""}`;
+  const btn=el.querySelector(".open");
+  if(p.jump){btn.onclick=()=>document.getElementById(p.jump).scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});btn.style.display="block";}
+  else{const d=el.querySelector(".detail");btn.onclick=()=>{d.hidden=!d.hidden;btn.setAttribute("aria-expanded",!d.hidden);btn.textContent=d.hidden?"Open case study +":"Close case study −";};}
+  return el;}
+P.forEach(p=>grid.appendChild(card(p)));
+
+function render(){
+  fil.querySelectorAll(".chip").forEach(b=>b.setAttribute("aria-pressed",b.dataset.k===cat));
+  P.forEach(p=>{const el=document.getElementById("p-"+p.id);
+    el.hidden=cat!=="all"&&p.cat!==cat;
+    el.classList.toggle("hit",!!skill&&p.skills.includes(skill));
+    el.classList.toggle("dim",!!skill&&!p.skills.includes(skill));});
+  document.querySelectorAll(".bom-row").forEach(r=>r.setAttribute("aria-pressed",r.dataset.s===skill));
+  const res=document.getElementById("bomResult");
+  res.textContent=skill?skill+" → "+P.filter(p=>p.skills.includes(skill)).map(p=>p.t).join(" · "):"Pick a skill to trace it.";
+}
+const counts={};P.forEach(p=>p.skills.forEach(s=>counts[s]=(counts[s]||0)+1));
+const bom=document.getElementById("bom");
+Object.entries(counts).sort((a,b)=>b[1]-a[1]).forEach(([s,n],i)=>{
+  const b=document.createElement("button");b.className="bom-row";b.dataset.s=s;
+  b.innerHTML=`<span class="no">${String(i+1).padStart(3,"0")}</span><span>${s}</span><span class="qty">QTY ${n}</span>`;
+  b.onclick=()=>{cat="all";skill=skill===s?null:s;render();
+    if(skill){const f=P.find(p=>p.skills.includes(s));document.getElementById("p-"+f.id).scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"center"});}};
+  bom.appendChild(b);});
+
+const work=document.getElementById("work"),mD=document.getElementById("mDeep"),mQ=document.getElementById("mQuick");
+function mode(q){work.classList.toggle("quick",q);mD.setAttribute("aria-pressed",!q);mQ.setAttribute("aria-pressed",q);try{localStorage.setItem("pf-mode",q?"q":"d")}catch(e){}}
+mD.onclick=()=>mode(false);mQ.onclick=()=>mode(true);
+try{if(localStorage.getItem("pf-mode")==="q")mode(true)}catch(e){}
+render();
+
+/* ---------- Reel animation (decorative) ---------- */
+(function(){const c=document.getElementById("reel");if(!c)return;const x=c.getContext("2d");const W=c.width,H=c.height;
+  const still=matchMedia("(prefers-reduced-motion: reduce)").matches;let t=0;
+  function frame(){const g=x.createLinearGradient(0,0,0,H);g.addColorStop(0,"#2A1638");g.addColorStop(.6,"#7A2E2E");g.addColorStop(1,"#E39B3A");
+    x.fillStyle=g;x.fillRect(0,0,W,H);
+    x.fillStyle="rgba(246,241,231,.9)";x.beginPath();x.arc(W*.62,H*.28+Math.sin(t/40)*4,26,0,Math.PI*2);x.fill();
+    for(let i=0;i<3;i++){x.fillStyle=`rgba(20,10,20,${.35+i*.2})`;x.beginPath();x.moveTo(0,H*(.62+i*.1));
+      for(let k=0;k<=W;k+=10)x.lineTo(k,H*(.62+i*.1)+Math.sin((k+t*(i+1))/28)*8);x.lineTo(W,H);x.lineTo(0,H);x.fill();}
+    x.fillStyle="#140A14";x.beginPath();x.moveTo(W*.38,H*.7);x.lineTo(W*.46,H*.5);x.lineTo(W*.54,H*.7);x.fill();
+    x.beginPath();x.arc(W*.46,H*.48,7,0,Math.PI*2);x.fill();
+    t++;if(!still)requestAnimationFrame(frame);}
+  frame();})();
+
+document.getElementById("copyBtn").onclick=()=>{const o=document.getElementById("copied"),e=document.getElementById("email");
+  navigator.clipboard.writeText(e.textContent).then(()=>o.textContent="Copied").catch(()=>{const r=document.createRange();r.selectNodeContents(e);const s=getSelection();s.removeAllRanges();s.addRange(r);o.textContent="Selected, press copy";});};
+</script>
+
+</body>
+</html>
